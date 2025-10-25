@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا- أشهى 10 أطباق عالمية</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* 1. كود لتوسيط شريط التنقل */
+        .navbar .nav-menu {
+            justify-content: center;
+            flex-grow: 1;
+        }
+        @media (max-width: 850px) {
+            .navbar .logo {
+                display: none;
+            }
+        }
+
+        /* 2. كود لتنسيق رسائل الخطأ في النموذج */
+        .form-group .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            display: none;
+            margin-top: 5px;
+        }
+        .form-group.error .error-message {
+            display: block;
+        }
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: #e74c3c;
+        }
+
+        /* 3. تنسيق رسالة النجاح */
+        .success-message {
+            background-color: #d4edda;
+            color: #bb86fc;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            display: none; /* مهم: إخفاؤها افتراضيًا */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">أشهى 10 أطباق عالمية</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="login.html" class="nav-link">تسجيل الدخول</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="dishes.html" class="nav-link">الأطباق</a></li>
+                <li class="nav-item"><a href="information.html" class="nav-link">معلومات الطبق</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">عن الموقع</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">تواصل معنا</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-page">
+            <div class="container">
+                <h2>تواصل معنا</h2>
+                <p>هل لديك أي استفسار أو اقتراح؟ يسعدنا أن نسمع منك. يرجى ملء النموذج أدناه.</p>
+                
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-group"><label for="name">الاسم الكامل</label><input type="text" id="name" required><div class="error-message">الاسم مطلوب.</div></div>
+                    <div class="form-group"><label for="email">البريد الإلكتروني</label><input type="email" id="email" required><div class="error-message">الرجاء إدخال بريد إلكتروني صحيح.</div></div>
+                    <div class="form-group"><label for="subject">الموضوع</label><input type="text" id="subject" required><div class="error-message">الموضوع مطلوب.</div></div>
+                    <div class="form-group"><label for="message">الرسالة</label><textarea id="message" rows="5" required></textarea><div class="error-message">الرسالة لا يمكن أن تكون فارغة.</div></div>
+                    <button type="submit" class="cta-button">إرسال الرسالة</button>
+                </form>
+
+                <!-- تم وضع رسالة النجاح هنا، خارج النموذج وفي المكان الصحيح -->
+                <div id="form-success-message" class="success-message">تم إرسال رسالتك بنجاح. شكرًا لك!</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 - مشروع تصميم الويب | جامعة الجيل الجديد</p>
+    </footer>
+
+    <!-- كود JavaScript الصحيح والنظيف -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (!contactForm) return;
+
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const subjectInput = document.getElementById('subject');
+            const messageInput = document.getElementById('message');
+            const successMessage = document.getElementById('form-success-message');
+
+            function isValidEmail(email) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(email);
+            }
+
+            function showError(inputElement, message) {
+                const formGroup = inputElement.parentElement;
+                const errorElement = formGroup.querySelector('.error-message');
+                if (errorElement) {
+                    errorElement.textContent = message;
+                    formGroup.classList.add('error');
+                }
+            }
+
+            function hideError(inputElement) {
+                const formGroup = inputElement.parentElement;
+                formGroup.classList.remove('error');
+            }
+
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const inputs = [nameInput, emailInput, subjectInput, messageInput];
+                inputs.forEach(hideError);
+                successMessage.style.display = 'none';
+
+                let isValid = true;
+
+                if (nameInput.value.trim() === '') {
+                    showError(nameInput, 'الاسم مطلوب.');
+                    isValid = false;
+                }
+                if (!isValidEmail(emailInput.value.trim())) {
+                    showError(emailInput, 'الرجاء إدخال بريد إلكتروني صحيح.');
+                    isValid = false;
+                }
+                if (subjectInput.value.trim() === '') {
+                    showError(subjectInput, 'الموضوع مطلوب.');
+                    isValid = false;
+                }
+                if (messageInput.value.trim() === '') {
+                    showError(messageInput, 'الرسالة لا يمكن أن تكون فارغة.');
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    console.log('تم إرسال النموذج بنجاح.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
