@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - أشهى 10 أطباق عالمية</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">أشهى 10 أطباق عالمية</a>
+               <ul class="nav-menu">
+                  <li class="nav-item"><a href="login.html" class="nav-link active">تسجيل الدخول</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="dishes.html" class="nav-link ">الأطباق</a></li>
+                  <li class="nav-item"><a href="information.html.html" class="nav-link">معلومات الطبق</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">عن الموقع</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+            </ul>
+            <div class="auth-buttons"></div>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="content-page">
+            <div class="container">
+                <form id="login-form" class="contact-form" novalidate>
+                    <h2>تسجيل الدخول</h2>
+                    <p>مرحباً بعودتك! (لللتجربة: استخدم user@example.com وكلمة المرور 123456)</p>
+                    <div class="form-group"><label for="email">البريد الإلكتروني</label><input type="email" id="email" required><div class="error-message">الرجاء إدخال بريد إلكتروني صحيح.</div></div>
+                    <div class="form-group"><label for="password">كلمة المرور</label><input type="password" id="password" required><div class="error-message">كلمة المرور مطلوبة.</div></div>
+                    <button type="submit" class="cta-button">  <a href="index.html" class="nav-link">دخول</a>  </button>
+                    <div id="login-error-message" class="error-message" style="display:none; text-align:center; margin-top: 15px; background: #cf667920; padding: 10px; border-radius: 5px;">البيانات المدخلة غير صحيحة.</div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2025 - مشروع تصميم الويب | جامعة الجيل الجديد</p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
