@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأطباق - أشهى 10 أطباق عالمية</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ==== بداية الإضافة الوحيدة ==== */
+        .navbar .nav-menu {
+            justify-content: center;
+            flex-grow: 1;
+        }
+        /* ==== نهاية الإضافة الوحيدة ==== */
+
+        /* تنسيقات أساسية لضمان عمل الروابط بشكل جيد (هذه كانت موجودة من قبل) */
+        .dishes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* مسافة بين البطاقات */
+            padding: 20px 0;
+        }
+
+        .dish-card-link {
+            text-decoration: none; /* إزالة الخط تحت الرابط */
+            color: inherit;       /* الحفاظ على لون النص الأصلي */
+            display: block;       /* لجعل الرابط يأخذ أبعاد البطاقة */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .dish-card-link:hover {
+            transform: scale(1.03); /* تكبير بسيط عند مرور الماوس */
+        }
+
+        /* افترض أن لديك تنسيق .dish-card في ملف style.css */
+        .dish-card {
+            width: 300px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .dish-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .dish-card-content {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">أشهى 10 أطباق عالمية</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="login.html" class="nav-link">تسجيل الدخول</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li class="nav-item"><a href="dishes.html" class="nav-link active">الأطباق</a></li>
+                <li class="nav-item"><a href="information.html" class="nav-link">معلومات الطبق</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">عن الموقع</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-page">
+            <div class="container">
+                <h2>أشهى 10 أطباق في العالم</h2>
+                <p>استكشف معنا قائمة منتقاة من الأطباق التي حازت على إعجاب الذواقة حول العالم.</p>
+
+                <div class="dishes-container">
+
+                    <!-- 1. بيتزا -->
+                    <a href="information.html" class="dish-card-link">
+                         <a href="information.html #pizza-section">
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\pizza.jpg" alt="بيتزا نابوليتانا">
+                            <div class="dish-card-content">
+                                <h3>1. بيتزا نابوليتانا (إيطاليا)</h3>
+                                <p>عجينة رقيقة مع صلصة طماطم طازجة وجبن الموزاريلا والريحان.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 2. كاري ماسامان -->
+                    <a href="information.html" class="dish-card-link">
+                         <a href="information.html #curry-massan-section">
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\massaman_curry.jpg" alt="كاري ماسامان">
+                            <div class="dish-card-content">
+                                <h3>2. كاري ماسامان (تايلاند)</h3>
+                                <p>كاري غني وحلو يجمع بين نكهات التوابل وحليب جوز الهند.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 3. سوشي -->
+                    <a href="information.html" class="dish-card-link">
+                        <a href="information.html #sushi-section">
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\sushi.jpg" alt="سوشي">
+                            <div class="dish-card-content">
+                                <h3>3. السوشي (اليابان)</h3>
+                                <p>فن ياباني يجمع بين الأرز والمأكولات البحرية الطازجة.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 4. تاكو (طبق افتراضي) -->
+                    <a href="information.html" class="dish-card-link">
+                         <a href="information.html#tacos-section">
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\tacos.jpg" alt="تاكو">
+                            <div class="dish-card-content">
+                                <h3>4. تاكو (المكسيك)</h3>
+                                <p>خبز التورتيلا المقرمش مع اللحم المفروم والجبن والصلصة.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 5. بط بكين (طبق افتراضي) -->
+                    <a href="information.html" class="dish-card-link">
+                          <a href="information.html#duck-section">
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\peking_duck.jpg"alt="بط بكين">
+                            <div class="dish-card-content">
+                                <h3>5. بط بكين (الصين)</h3>
+                                <p>طبق إمبراطوري يتميز بجلده المقرمش ولحمه الطري.</p>
+                            </div>
+                        </div>
+                    </a>
+
+               
+                    <a href="information.html" class="dish-card-link">
+                          <a href="information.html#kabsa-section">
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\kabsa.jpg" alt="كبسه">
+                            <div class="dish-card-content">
+                                <h3>6. كبسة</h3>
+                                <p>طبق أرز غني بالزعفران والمأكولات البحرية أو الدجاج.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                   
+                    <a href="information.html" class="dish-card-link">
+                           <a href="information.html#asado-section">
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\asado.jpg" alt="الاسادو">
+                            <div class="dish-card-content">
+                                <h3>7.الاسادو</h3>
+                                <p>لحم مشوي على أسياخ يقدم مع الخبز والسلطات.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                  
+                    <a href="information.html" class="dish-card-link">
+                         <a href="information.html#rendang-section" >
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\rendang.jpg" alt="ريندانغ">
+                            <div class="dish-card-content">
+                                <h3>8.   الريندانغ الاندلوسي</h3>
+                                <p>قطع لحم بقري مع معجون توابل</p>
+                            </div>
+                        </div>
+                    </a>
+
+                 
+                    <a href="information.html" class="dish-card-link">
+                          <a href="information.html#hummus-section" >
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\hummus.jpg" alt="حمص">
+                            <div class="dish-card-content">
+                                <h3>9.حمص سوري </h3>
+                                <p>حمص سوري بنكهه الزيت الزيتون</p>
+                            </div>
+                        </div>
+                    </a>
+
+                   
+                    <a href="information.html" class="dish-card-link">4
+                          <a href="information.html#fish-section" >
+                        <div class="dish-card">
+                            <img src="C:\Users\LEGION\OneDrive\Desktop\finalwebproject\assets\images\fish_and_chips.jpg" alt="سمك">
+                            <div class="dish-card-content">
+                                <h3>10. سمك فيليه</h3>
+                                <p>سمك مع شبس مقرمش</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 - مشروع تصميم الويب | جامعة الجيل الجديد</p>
+    </footer>
+</body>
+</html>
